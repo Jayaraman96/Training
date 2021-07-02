@@ -29,14 +29,24 @@ public class Adapter extends ArrayAdapter<Images> {
         rowViews = inflater.inflate(R.layout.list_images, null);
 
         ImageView imageView = (ImageView) rowViews.findViewById(R.id.imageView);
+        ImageView imageView2 = (ImageView) rowViews.findViewById(R.id.imageView2);
+
         try {
-            Picasso.get()
-                    .load("https://image.tmdb.org/t/p/w500" + images.get(position).getPoster_path())
-                    .into(imageView);
+            if(position%2==0){
+                Picasso.get()
+                        .load("https://image.tmdb.org/t/p/w500" + images.get(position).getPoster_path())
+                        .into(imageView);
+                Picasso.get()
+                        .load("https://image.tmdb.org/t/p/w500" + images.get(position+1).getPoster_path())
+                        .into(imageView2);
+            }else{
+
+            }
 
         } catch (Exception ignored) {
 
         }
+
         return rowViews;
     }
 }
