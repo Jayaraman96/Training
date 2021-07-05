@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="asset_statements" translatable="false">[{ \"include\": \"https://www.recipe-app.com/.well-known/assetlinks.json\" }]</string>
+</resources>
