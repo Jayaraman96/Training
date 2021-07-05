@@ -1,13 +1,27 @@
 package com.example.myapplication;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ServerResponse {
-    int page;
-    List<Images> results;
-    int total_pages;
-    int total_results;
+    @SerializedName("page")
+    @Expose
+    private int page;
+
+    @SerializedName("results")
+    @Expose
+    private List<Images> results;
+
+    @SerializedName("total_pages")
+    @Expose
+    private int total_pages;
+
+    @SerializedName("total_results")
+    @Expose
+    private int total_results;
 
     public int getPage() {
         return page;
